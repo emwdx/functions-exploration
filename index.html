@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Functions - Notice and Wonder</title>
+    <link rel="stylesheet" href="../../../bootstrap/css/bootstrap.min.css" />
+
+    <style>
+
+    .bordered{
+
+
+    border: 1px solid black;
+    border-radius: 5px;
+    height:60px;
+    margin:5px;
+
+    }
+
+    input{
+
+      font-size:36px;
+
+    }
+    .output{
+
+      font-size:18px;
+      color:blue;
+    }
+    .largeText{
+  font-size:36px;
+
+    }
+
+    </style>
+
+  </head>
+  <body>
+
+    <h1 class = "text-center">Functions Activity</h1>
+    <div class = "row">
+        <div class = "col-md-6 col-md-offset-3 lead">
+          Play around with the inputs and observe the outputs for the eight functions below. As you do so, make notes in your notebook about the following questions:
+
+          <p></p>
+
+          <ul>
+            <li>What do you notice about the relationship between the input and the output?</li>
+            <li>What do you wonder about these relationships?</li>
+          </ul>
+        </div>
+    </div>
+    <div id="container" class = "container">
+
+
+
+
+    </div>
+
+
+<div class = "row">
+  <div class = "col-md-6 col-md-offset-3 lead text-center">
+    <hr/>
+
+    Created by <a href = "http://www.evanweinberg.com">Evan Weinberg</a>
+  </div>
+</div>
+
+    <script src="../../build/react.js"></script>
+    <script src="../../build/react-dom.js"></script>
+    <script src="../../build/browser.min.js"></script>
+
+    <script type="text/babel">
+    var a = Math.round(Math.random()*8)-4;
+    var b = Math.round(Math.random()*10)-4;
+
+
+    var App = React.createClass({
+
+      render: function () {
+
+
+        return (
+          <div>
+
+          <FunctionExample inputFunction={addOne} index={1} inputType = {"number"} initialValue={2}></FunctionExample>
+
+          <FunctionExample inputFunction={square} index={2} inputType = {"number"} initialValue={3}></FunctionExample>
+
+          <FunctionExample inputFunction={firstLetter} index={3} inputType = {"text"} initialValue={"slatibartfast"}></FunctionExample>
+
+          <FunctionExample inputFunction={numOfLetters} index={4} inputType = {"text"} initialValue={"Ford Prefect"}></FunctionExample>
+
+          <FunctionExample inputFunction={linearFunction} index={5} inputType = {"number"} initialValue={2}></FunctionExample>
+
+          <FunctionExample inputFunction={randomLinearFunction} index={6} inputType = {"number"} initialValue={-2}></FunctionExample>
+
+          <FunctionExample inputFunction={uhOh} index={7} inputType = {"number"} initialValue={6}></FunctionExample>
+
+          <FunctionExample inputFunction={constantFunction} index={8} inputType = {"number"} initialValue={-1}></FunctionExample>
+
+      </div>
+          )
+
+            }
+
+});
+
+var FunctionExample = React.createClass({
+ getInitialState:function(){
+
+
+   return{
+
+     inputValue:this.props.initialValue,
+     outputValue:(this.props.inputFunction(this.props.initialValue))
+
+   }
+ },
+  render: function(){
+
+  return (
+    <div>
+    <h3>Function {this.props.index}: </h3>
+        <div className = "row well largeText">
+          <div className = "col-md-6 col-md-offset-3 bordered">
+
+          Input:
+          <input type= {this.props.inputType} className = "" value= {this.state.inputValue} ref="inputVal" onChange={this.setValue}/>
+          </div>
+          <div className = "col-md-4 bordered">
+          Output:
+        <span className = "output largeText"  ref = "output"> {this.state.outputValue} </span>
+
+          </div>
+        </div>
+
+    </div>
+
+  );
+},
+setValue:function(){
+
+this.setState({
+  inputValue:this.refs.inputVal.value,
+  outputValue:this.props.inputFunction(this.refs.inputVal.value)
+
+
+})
+
+
+}
+
+
+})
+
+
+      ReactDOM.render(
+        <App />,
+        document.getElementById('container')
+      );
+
+      function addOne(n){return parseInt(n)+1};
+      function square(n){return Math.pow(parseInt(n),2 + 1)};
+      function firstLetter(characters){
+        return characters.substring(0,1)
+
+      }
+      function numOfLetters(characters){return characters.length};
+      function linearFunction(x){return 3*x-4};
+
+      function randomLinearFunction(value){
+
+        return a*value+b;
+
+      };
+      function uhOh(){return Math.round(Math.random()*10)-5; }
+      function constantFunction(){return 42};
+
+    </script>
+  </body>
+</html>
+
+<script>
+
+        </script>
