@@ -66,11 +66,12 @@
   </div>
 </div>
 
-    <script src="../../build/react.js"></script>
-    <script src="../../build/react-dom.js"></script>
-    <script src="../../build/browser.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.1/react.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.1/react-dom.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
 
     <script type="text/babel">
+    //These values are used in the randomLinearFunction function below.
     var a = Math.round(Math.random()*8)-4;
     var b = Math.round(Math.random()*10)-4;
 
@@ -160,6 +161,7 @@ this.setState({
         document.getElementById('container')
       );
 
+//These are the functions used in each example.
       function addOne(n){return parseInt(n)+1};
       function square(n){return Math.pow(parseInt(n),2 + 1)};
       function firstLetter(characters){
