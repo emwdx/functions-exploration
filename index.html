@@ -90,7 +90,7 @@
 
           <FunctionExample inputFunction={firstLetter} index={3} inputType = {"text"} initialValue={"slatibartfast"}></FunctionExample>
 
-          <FunctionExample inputFunction={numOfLetters} index={4} inputType = {"text"} initialValue={"Ford Prefect"}></FunctionExample>
+          <FunctionExample inputFunction={numOfLetters} index={4} inputType = {"text"} initialValue={"FordPrefect"}></FunctionExample>
 
           <FunctionExample inputFunction={linearFunction} index={5} inputType = {"number"} initialValue={2}></FunctionExample>
 
@@ -163,7 +163,7 @@ this.setState({
 
 //These are the functions used in each example.
       function addOne(n){return parseInt(n)+1};
-      function square(n){return Math.pow(parseInt(n),2 + 1)};
+      function square(n){return Math.pow(parseInt(n),2)+1};
       function firstLetter(characters){
         return characters.substring(0,1)
 
