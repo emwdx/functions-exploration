@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Functions - Notice and Wonder</title>
+    <title>Input/Output - Notice and Wonder</title>
     <link rel="stylesheet" href="../../../bootstrap/css/bootstrap.min.css" />
 
     <style>
@@ -37,16 +37,16 @@
   </head>
   <body>
 
-    <h1 class = "text-center">Functions Activity</h1>
+    <h1 class = "text-center">Input/Outputs Activity</h1>
     <div class = "row">
         <div class = "col-md-6 col-md-offset-3 lead">
-          Play around with the inputs and observe the outputs for the eight functions below. As you do so, make notes in your notebook about your thoughts on the following questions:
+          Play around with the inputs and observe the outputs for the eight blocks below. As you do so, make notes in your notebook about your thoughts on the following questions:
 
           <p></p>
 
           <ul>
             <li>What do you notice about the relationship between the input and the output?</li>
-            <li>What do you wonder about these functions?</li>
+            <li>What do you wonder about these relationships?</li>
           </ul>
         </div>
     </div>
@@ -99,6 +99,8 @@
           <FunctionExample inputFunction={uhOh} index={7} inputType = {"number"} initialValue={6}></FunctionExample>
 
           <FunctionExample inputFunction={constantFunction} index={8} inputType = {"number"} initialValue={-1}></FunctionExample>
+
+          <FunctionExample inputFunction={newFunction} index={9} inputType = {"number"} initialValue={10}></FunctionExample>
 
       </div>
           )
@@ -178,6 +180,7 @@ this.setState({
       };
       function uhOh(){return Math.round(Math.random()*10)-5; }
       function constantFunction(){return 42};
+      function newFunction(number){return number%3 }
 
     </script>
   </body>
